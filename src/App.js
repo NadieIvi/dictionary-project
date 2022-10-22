@@ -1,23 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import dictionary from "./dictionary.png";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+        <img src={dictionary} className="dictionary-icon" alt="logo" />
+      </header>
+
+      <footer>
+        This project was coded by Nadie Ivanitska and is{" "}
         <a
-          className="App-link"
-          href="https://reactjs.org"
+          href="https://github.com/NadieIvi/react-weather-final"
+          target="_blank"
+          rel="noreferrer"
+        >
+          open-soursed on GitHub
+        </a>{" "}
+        and{" "}
+        <a
+          href="https://lovely-taffy-3e2a51.netlify.app/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          hosted on Netlify
+        </a>
+        <a
+          href="https://www.flaticon.com/free-icons/dictionary"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Dictionary icons created by Freepik - Flaticon
         </a>
-      </header>
+      </footer>
     </div>
   );
 }
