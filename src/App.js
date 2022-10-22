@@ -1,4 +1,5 @@
 import dictionary from "./dictionary.png";
+import Dictionary from "./Dictionary";
 import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 
@@ -9,6 +10,10 @@ function App() {
         <header className="App-header mt-5">
           <img src={dictionary} className="dictionary-icon" alt="logo" />
         </header>
+
+        <main>
+          <Dictionary />
+        </main>
 
         <footer>
           This project was coded by Nadie Ivanitska and is{" "}
@@ -21,7 +26,7 @@ function App() {
           </a>{" "}
           and{" "}
           <a
-            href="https://6353d35b3255bf064b840b27--moonlit-mousse-9a24f0.netlify.app/"
+            href="https://moonlit-mousse-9a24f0.netlify.app/"
             target="_blank"
             rel="noreferrer"
           >
@@ -32,7 +37,6 @@ function App() {
             href="https://www.flaticon.com/free-icons/dictionary"
             target="_blank"
             rel="noopener noreferrer"
-            className="fs-6"
           >
             Dictionary icons created by Freepik - Flaticon
           </a>
