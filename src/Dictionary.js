@@ -3,32 +3,57 @@ import axios from "axios";
 import "./Dictionary.css";
 import Results from "./Results";
 
-export default function Dictinary() {
-  let [keyword, setKeyword] = useState(null);
+export default function Dictinary(props) {
+  let [keyword, setKeyword] = useState(props.defaultKeyword);
   let [results, setResults] = useState(null);
+  let [loaded, setLoaded] = useState(false);
 
   function handleResponse(response) {
     setResults(response.data[0]);
+  }
+
+  function search() {
+    //documentation https://dictionaryapi.dev/
+    let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en_US/${keyword}`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
   }
 
   function handleKeywordChange(event) {
     setKeyword(event.target.value);
   }
 
-  function search(event) {
-    event.preventDefault();
-
-    //documentation https://dictionaryapi.dev/
-    let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en_US/${keyword}`;
-    axios.get(apiUrl).then(handleResponse);
+  function load() {
+    setLoaded(true);
+    search();
   }
 
-  return (
-    <div className="Dictionary mt-5">
-      <form onSubmit={search}>
-        <input type="search" onChange={handleKeywordChange} />
-      </form>
-      <Results results={results} />
-    </div>
-  );
+  if (loaded) {
+    return (
+      <div className="Dictionary mt-5">
+        <section>
+          <h1>What word do you want to look up?</h1>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="search"
+              onChange={handleKeywordChange}
+              defaultValue={props.defaultKeyword}
+            />
+          </form>
+          <div className="hint">
+            {" "}
+            suggested words: sunset, cat, book, forest
+          </div>
+        </section>
+        <Results results={results} />
+      </div>
+    );
+  } else {
+    load();
+    return "Loading";
+  }
 }

@@ -12,7 +12,7 @@ function App() {
         </header>
 
         <main>
-          <Dictionary />
+          <Dictionary defaultKeyword="peace" />
         </main>
 
         <footer>

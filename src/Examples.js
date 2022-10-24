@@ -1,4 +1,5 @@
 import React from "react";
+import "./Examples.css";
 
 export default function Examples(props) {
   if ("example" in props.definition === true) {
