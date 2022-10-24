@@ -1,0 +1,10 @@
+.phonetic-text {
+  list-style: none;
+}
+
+.phonetic-audio-btn {
+  font-size: 23px;
+  border: none;
+  background-color: transparent;
+  margin-right: 10px;
+}

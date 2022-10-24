@@ -21,6 +21,7 @@ function App() {
             href="https://github.com/NadieIvi/dictionary-project"
             target="_blank"
             rel="noreferrer"
+            className="project-links"
           >
             open-soursed on GitHub
           </a>{" "}
@@ -29,6 +30,7 @@ function App() {
             href="https://moonlit-mousse-9a24f0.netlify.app/"
             target="_blank"
             rel="noreferrer"
+            className="project-links"
           >
             hosted on Netlify
           </a>
@@ -37,8 +39,9 @@ function App() {
             href="https://www.flaticon.com/free-icons/dictionary"
             target="_blank"
             rel="noopener noreferrer"
+            className="dictionary-link"
           >
-            Dictionary icons created by Freepik - Flaticon
+            Dictionary icon created by Freepik - Flaticon
           </a>
         </footer>
       </div>

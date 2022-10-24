@@ -50,6 +50,7 @@ export default function Dictinary(props) {
       <div className="Dictionary mt-5">
         <section>
           <h1>What word do you want to look up?</h1>
+
           <form onSubmit={handleSubmit}>
             <input
               type="search"
@@ -57,9 +58,10 @@ export default function Dictinary(props) {
               defaultValue={props.defaultKeyword}
             />
           </form>
+
           <div className="hint">
             {" "}
-            suggested words: sunset, cat, book, forest
+            <em>suggested words: sunset, earth, yoga ...</em>
           </div>
         </section>
         <Results results={results} />
